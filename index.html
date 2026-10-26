@@ -3,6 +3,132 @@
 <html>
 <head>
     <title>Little Things Club</title>
+
+    <style>
+        body {
+            background-color: #ffe1e8;
+            font-family: Arial;
+            text-align: center;
+            margin: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: brown;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: pink;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        li {
+            margin: 12px;
+            text-align: left;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Little Things Club 🌷</h1>
+    <p>A little place for the good things in life.</p>
+
+    <div class="box">
+        <h2>Welcome!</h2>
+        <p>You don't have to do everything perfectly.
+        Just try to do one small thing for yourself today.</p>
+    </div>
+
+    <div class="box">
+        <h2>My little missions</h2>
+        <p>Choose what you want to do today.</p>
+
+        <ul>
+            <li>
+                <input type="checkbox" class="task">
+                Drink enough water
+            </li>
+            <li>
+                <input type="checkbox" class="task">
+                Go outside for a little while
+            </li>
+            <li>
+                <input type="checkbox" class="task">
+                Write down one good thing
+            </li>
+        </ul>
+
+        <p id="result">Missions completed: 0/3</p>
+        <button onclick="checkTasks()">Update my progress</button>
+    </div>
+
+    <div class="box">
+        <h2>A little reminder 💗</h2>
+        <p>You are allowed to rest.
+        Small progress is still progress.</p>
+        <button onclick="alert('You are doing your best!')">
+            I needed this
+        </button>
+    </div>
+
+    <div class="box">
+        <h2>Something good today</h2>
+        <p>What made you smile today?</p>
+        <input type="text" id="myNote"
+        placeholder="Write a little note">
+        <button onclick="saveNote()">Save note</button>
+        <p id="savedNote"></p>
+    </div>
+
+    <footer>
+        <p>Made with love by me ♡</p>
+    </footer>
+
+    <script>
+        function checkTasks() {
+            var tasks = document.querySelectorAll(".task");
+            var count = 0;
+
+            for (var i = 0; i < tasks.length; i++) {
+                if (tasks[i].checked) {
+                    count++;
+                }
+            }
+
+            document.getElementById("result").innerText =
+                "Missions completed: " + count + "/3";
+        }
+
+        function saveNote() {
+            var note = document.getElementById("myNote").value;
+            document.getElementById("savedNote").innerText =
+                "Your note: " + note;
+        }
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Little Things Club</title>
     <style>
         body {
             background-color: lightpink;
